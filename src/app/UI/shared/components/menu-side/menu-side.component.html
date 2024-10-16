@@ -9,17 +9,17 @@
 </header>
 <a
   class="menu__close"
-  (click)="cerrarMenu()">
+  (click)="closeMenu()">
 </a>
 <nav id="main-menu" class="flex-item">
   <ul>
-    <ng-container *ngFor="let menu of usuarioMenu">
+    <ng-container *ngFor="let menu of userMenu">
       <li
         [ngClass]="menu.menuPadre.clases"
-        *ngIf="tieneHijos(menu.menuPadre)">
+        *ngIf="hasChildren(menu.menuPadre)">
         <a
           href="javascript:void(0);"
-          (click)="mostrarHijos($event, menu.menuPadre)">
+          (click)="showChlindren($event, menu.menuPadre)">
           <img
             class="element-icon me-3"
             [src]="'assets/images/' + menu.menuPadre.icono + '.svg'"
@@ -41,7 +41,7 @@
           </ul>
         </ng-container>
       </li>
-      <li *ngIf="!tieneHijos(menu.menuPadre)">
+      <li *ngIf="!hasChildren(menu.menuPadre)">
         <a
           class="opciones-menu"
           routerLinkActive="active-link"
@@ -64,7 +64,7 @@
   <div class="user__logout">
     <a
       class="cursor-pointer"
-      (click)="cerrarSesion()">
+      (click)="closeSesion()">
       <img
         src="assets/images/icon-logout.svg"
         alt="icon logout">

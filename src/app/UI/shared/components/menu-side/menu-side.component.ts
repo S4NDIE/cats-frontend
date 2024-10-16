@@ -16,11 +16,11 @@ import { LoginUseCase } from 'src/app/domain/usecase/loginusercase';
 export class MenuSideComponent implements OnInit {
   @Output() onCerrarMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  classesMenuHijo: string[] = ['ocultarSubMenu'];
-  clasesMenuPadre: string[] = ['menu__first-level', 'menu-level'];
-  clasesMainMenu: string[] = [];
-  tituloSubMenu: string | undefined;
-  usuarioMenu: any[] = [];
+  classMenuChildren: string[] = ['ocultarSubMenu'];
+  classMenuParent: string[] = ['menu__first-level', 'menu-level'];
+  classMainMenu: string[] = [];
+  titleSubMenu: string | undefined;
+  userMenu: any[] = [];
   userLogin!: User;
 
   constructor(
@@ -28,53 +28,53 @@ export class MenuSideComponent implements OnInit {
     private readonly _loginUsercase: LoginUseCase
   ) {
     getDataFromJSON<Menu[]>('assets/data/menu.json').then(
-      (data) => (this.usuarioMenu = data)
+      (data) => (this.userMenu = data)
     );
   }
 
   ngOnInit() {
     this.userLogin = JSON.parse(localStorage.getItem('infoUser')!);
-    let resultado_menu = this.usuarioMenu.filter((menu) => {
-      let encontroHijo = false;
+    let resultMenu = this.userMenu.filter((menu) => {
+      let hasChildren = false;
       menu.menuPadre.menuHijos.filter((hijo: { url: string }) => {
         if (hijo.url.toString() == this.router.url.toString().substring(1)) {
-          encontroHijo = true;
+          hasChildren = true;
           return menu;
         }
       });
-      if (encontroHijo) {
+      if (hasChildren) {
         return menu;
       }
     });
-    if (resultado_menu.length > 0) {
-      this.mostrarHijos(null, resultado_menu[0].menuPadre);
+    if (resultMenu.length > 0) {
+      this.showChlindren(null, resultMenu[0].menuPadre);
     }
   }
 
-  tieneHijos(usuarioMenu: any) {
+  hasChildren(usuarioMenu: any) {
     return usuarioMenu.menuHijos?.length > 0;
   }
 
-  mostrarHijos(event: any, usuarioMenu: any) {
+  showChlindren(event: any, usuarioMenu: any) {
     event?.preventDefault();
-    this.usuarioMenu.forEach((x) => {
+    this.userMenu.forEach((x) => {
       x.menuPadre.visibleHijos = false;
       x.menuPadre.clases = [];
     });
 
-    let menuSeleccionado = this.usuarioMenu.filter(
+    let menuSeleccionado = this.userMenu.filter(
       (x) => x.menuPadre.id == usuarioMenu.id
     )[0];
     menuSeleccionado.menuPadre.visibleHijos = true;
     menuSeleccionado.menuPadre.clases.push('active');
-    this.tituloSubMenu = usuarioMenu.nombre;
+    this.titleSubMenu = usuarioMenu.nombre;
   }
 
-  cerrarMenu(): void {
+  closeMenu(): void {
     this.onCerrarMenu.emit(true);
   }
 
-  cerrarSesion(): void {
+  closeSesion(): void {
     this._loginUsercase.logout();
   }
 }

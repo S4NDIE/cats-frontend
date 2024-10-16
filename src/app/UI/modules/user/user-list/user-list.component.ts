@@ -23,6 +23,7 @@ export class UserListComponent implements OnInit {
   messageTable = {
     emptyMessage: 'No hay registros para mostrar',
   };
+  userLogin!: User;
 
   constructor(
     public _dialog: MatDialog,
@@ -31,6 +32,7 @@ export class UserListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.userLogin = JSON.parse(localStorage.getItem('infoUser')!);
     this.columnsUser = [
       { prop: 'document', name: 'Documento' },
       { prop: 'fullName', name: 'Nombre' },
@@ -45,22 +47,29 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(document: string) {
-    Swal.fire({
-      title: `¿Desea eliminar el usuario con el documento ${document}?`,
-      text: 'No podrá revertir esta acción',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Eliminar',
-      cancelButtonText: 'Cancelar',
-      customClass: {
-        cancelButton: 'btn-alert btn-alert-secondary',
-        confirmButton: 'btn-alert btn-alert-main',
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.deleteUserConfirm(document);
-      }
-    });
+    if (document != this.userLogin.document) {
+      Swal.fire({
+        title: `¿Desea eliminar el usuario con el documento ${document}?`,
+        text: 'No podrá revertir esta acción',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar',
+        customClass: {
+          cancelButton: 'btn-alert btn-alert-secondary',
+          confirmButton: 'btn-alert btn-alert-main',
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.deleteUserConfirm(document);
+        }
+      });
+    } else {
+      Swal.fire({
+        title: 'No puedes eliminar tu mismo usuario',
+        icon: 'warning',
+      });
+    }
   }
 
   async deleteUserConfirm(document: string) {
