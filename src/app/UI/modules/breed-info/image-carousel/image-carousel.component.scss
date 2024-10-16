@@ -1,0 +1,40 @@
+.carousel-container {
+  position: relative;
+  width: 100%; 
+  max-width: 600px; 
+  margin: auto;  
+  overflow: hidden;
+}
+
+mat-card {
+  width: 100%; 
+  height: 400px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background-color: rgba(255, 255, 255, 0); 
+  border: 0;
+  box-shadow: none;
+}
+
+.carousel-image {
+  width: 100%;   
+  height: 100%;
+  object-fit: contain; 
+}
+
+.indicators {
+  display: flex; 
+  justify-content: center; 
+}
+
+.indicators span {
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 20px;
+  color: gray;
+}
+
+.indicators span.active {
+  color: black;
+}

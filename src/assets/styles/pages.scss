@@ -1,0 +1,19 @@
+.panel-menu .panel__header {border-bottom: 1px solid var(--color-darkblue);}
+.panel-menu .item__title h4 {padding: 0.4em 0 0.4em 2em; position: relative;}
+.panel-menu .item__title h4 img {left: 0; position: absolute; top: 50%; transform: translateY(-50%);}
+.panel-menu .submenu {list-style: none;}
+.panel-menu .submenu li {padding-left: 1em; position: relative;}
+.panel-menu .submenu li:before {content: " "; background: var(--color-green); left: 0; position: absolute; transform: translateX(-50%); width: 1px;}
+.panel-menu .submenu li:not(:last-child):before {height: 100%;}
+.panel-menu .submenu li:last-child:before {height: 50%;}
+.panel-menu .submenu li:after {content: " "; background: var(--color-green); border-radius: 5px; height: 5px; left: 0; position: absolute; top: 50%; transform: translate(-50%,-50%); width: 5px}
+
+.docs-slider .item {border: 1px solid var(--color-lightgray); border-radius: 10px; margin-bottom: 1em;}
+.docs-slider .item .item__header h4, .docs-slider .item .item__header .status-item {display: inline-block;}
+.docs-slider .item .item__header .status-item {border-radius: 15px; font-size: 0.8em; line-height: 1em; padding: 0.5em;}
+.docs-slider .item .item__header .status-item.item__days {border: 1px solid var(--color-green);}
+.docs-slider .item .item__header .status-item.item__expired {background: var(--color-status_red); color: var(--color-white);}
+
+.docs-slider .item .item__content {padding: 1em;}
+.docs-slider .slider-controls a {align-items: center; border-radius: 50px; border: 1px solid var(--color-lightgray); display: inline-flex; height: 35px; justify-content: center; width: 35px}
+.docs-slider .item .item__footer {background: var(--color-lightgray); border-radius: 0 0 8px 8px; font-size: 0.8em; line-height: 1em; padding: 0.5em 1em;}

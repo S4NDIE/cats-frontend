@@ -1,0 +1,80 @@
+.ngx-datatable .action-buttons button {
+    margin-right: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .ngx-datatable .action-buttons i {
+    margin-right: 3px;
+  }
+
+  .container-page {
+    padding: 20px; 
+  }
+  
+  .table-responsive {
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; 
+  }
+  
+  
+  ngx-datatable {
+    width: 100%; 
+  }
+  
+  
+    .breed-header {
+      align-content: flex-start;
+      flex-wrap: wrap;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+    }
+  
+    .title {
+      color: var(--color-darkblue);
+      font-weight: bold;
+      margin: 0px 0px 0px 0px;
+      font-size: 30px;
+  
+    }
+    .filters {
+      display: flex;
+      margin-top: 20px;
+      padding-right: 80px;
+      gap: 12px;
+      font-size: 14px;
+    }
+  
+    .label-filter {
+      font-weight: 600;
+      color: rgba(0, 0, 0, 1);
+    }
+  
+  
+  .down {
+    background-color: var(--Azul-Grisceo, #ececff);
+    display: flex;
+    width: 30px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    border:  2px solid #ececff;
+    padding: 0%;
+  }
+  
+  .up {
+    background: var(--Azul-Claro, #6367FF);
+  }
+  
+  
+  .container-detail {
+    width: 90%; 
+  }
+  
+  
+  

@@ -1,0 +1,53 @@
+  <div class="login_image">
+
+    <div class="overlay">
+
+    <form
+      (ngSubmit)="onSubmit()"
+      [formGroup]="loginForm"
+      novalidate>
+        <div class="name-principal">
+          <span>Bienvenidos al api de gatos</span>
+          <br />
+        </div>
+        <div class="form-input">
+          <span class="label-text">Ingresa tu número de documento</span>
+          <input 
+            class="input-login"
+            type="text"
+            placeholder="Usuario"
+            [ngClass]="{ 'is-invalid': loginForm.get('document')?.invalid }"
+            formControlName="document">
+            <span
+            class="invalid-feedback"
+            *ngIf="loginForm.get('document')?.touched && loginForm.get('document')?.errors?.['required']">
+            Este campo es requerido
+          </span>
+        </div>
+        <div class="form-input">
+          <span class="label-text">Ingresa tu clave</span>
+          <input
+            class="input-login" 
+            type="password"
+            placeholder="Contraseña"
+            [ngClass]="{ 'is-invalid': loginForm.get('password')?.invalid }"
+            formControlName="password">
+            <span
+            class="invalid-feedback"
+            *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']">
+            Este campo es requerido
+          </span>
+        </div>
+        <button
+          class="btn"
+          type="submit"
+          [disabled]="loginForm.invalid">
+          Ingresar
+        </button>
+    </form>
+  </div>
+
+    
+  </div>
+  
+ 

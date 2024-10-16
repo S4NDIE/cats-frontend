@@ -1,0 +1,106 @@
+@import 'node_modules/@swimlane/ngx-datatable/index.css';
+@import 'node_modules/@swimlane/ngx-datatable/themes/material.css';
+@import 'node_modules/@swimlane/ngx-datatable/assets/icons.css';
+@import 'ngx-toastr/toastr';
+@import '@sweetalert2/themes/bootstrap-4/bootstrap-4.scss';
+
+:root {
+  --color-white: #FFF;
+  --color-gray: #CCC;
+  --color-lightgray: #EBEBEB;
+  --color-green: #B4C9E7;
+  --color-blue: #0F6496;
+  --color-darkblue: #1E2533;
+  --color-status_green: #47DB13;
+  --color-status_yellow: #FFCA4A;
+  --color-status_red: #DB2B13;
+  --font-main: 'Roboto', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-black: 900;
+  --shadow-box: 0 8px 16px rgba(0,0,0,0.05);
+}
+
+@import 'assets/styles/base';
+@import 'assets/styles/buttons';
+@import 'assets/styles/transitions';
+@import 'assets/styles/modal';
+@import 'assets/styles/container';
+@import 'assets/styles/header';
+@import 'assets/styles/content';
+@import 'assets/styles/elements';
+@import 'assets/styles/pager';
+@import 'assets/styles/pages';
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bottom-4 {
+  bottom: 4rem;
+}
+
+.btn-alert {
+  border: none !important;
+  border-radius: 23px !important;
+  font-size: 16px !important;
+  font-weight: var(--font-weight-semibold) !important;
+  height: 2.81em !important;
+  line-height: 2.81em !important;
+  min-width: 120px !important;
+  padding: 0 20px !important;
+}
+
+.btn-alert:not(.btn-additional) i {
+  margin-left: 1em !important;
+  margin-right: -0.5em !important;
+}
+
+.btn-alert.btn-alert-main {
+  background-color: var(--color-green) !important;
+  color: #212529 !important;
+}
+
+.btn-alert.btn-alert-secondary {
+  background-color: var(--color-darkblue) !important;
+  color: var(--color-white) !important;
+}
+
+.btn-alert:hover {
+  opacity: 0.8 !important;
+}
+
+.ocultarSubMenu { display: none;}
+.child-visible { display: inline;}
+.active-link { font-weight: bolder;}
+
+.dialog-content-scroll {
+  overflow-y: auto; 
+  max-height: 500px;
+}
+
+.icon-actions {
+  width: 1rem;
+  height: 1rem;
+}
+
+.close-button {
+  float: right;
+}
+
+.close-icon {
+  transition: 1s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(180deg);
+}
+
+::ng-deep .icon-outside .close-button {
+  float: right;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+  overflow: unset
+}

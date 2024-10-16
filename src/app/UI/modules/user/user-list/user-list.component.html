@@ -1,0 +1,49 @@
+<div class="container-page">
+  <div class="breed-header">
+    <h2 class="title">Lista de Usuarios</h2>
+  
+    <div class="filters">
+      <a
+      (click)="createCustomer()"
+      class="btn btn-main open-modal">
+      Crear
+      <img
+        class="ms-2"
+        src="assets/images/icon-add.svg"
+        alt="icon add">
+    </a>
+    </div>
+  </div>
+  
+  <div class="mt-4 table-responsive">
+    <ngx-datatable 
+        #myTable
+        class="material expandable"
+        [rows]="userList"
+        [columns]="columnsUser"
+        [columnMode]="ColumnMode.force"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        rowHeight="auto"
+        [limit]="10"
+        [scrollbarH]="true"
+        [messages]="messageTable"
+
+    >
+      
+      <ng-template #actionTemplate let-row="row">
+        <div class="editing-wrapper">
+          <a
+            (click)="deleteUser(row.document)"
+            class="btn-small open-modal cursor-pointer"
+            matTooltip="Eliminar">
+            <img
+              src="assets/images/icon-remove.svg"
+              class="icon-actions"
+              alt="icon-cohete">
+          </a>
+        </div>
+      
+      </ng-template>
+    </ngx-datatable>
+</div>

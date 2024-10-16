@@ -1,0 +1,73 @@
+<header
+  id="brand"
+  class="flex-item mb-4">
+  <a [routerLink]="'/home'">
+    <img
+      src="assets/images/cat-logo.svg"
+      alt="cat logo">
+  </a>
+</header>
+<a
+  class="menu__close"
+  (click)="cerrarMenu()">
+</a>
+<nav id="main-menu" class="flex-item">
+  <ul>
+    <ng-container *ngFor="let menu of usuarioMenu">
+      <li
+        [ngClass]="menu.menuPadre.clases"
+        *ngIf="tieneHijos(menu.menuPadre)">
+        <a
+          href="javascript:void(0);"
+          (click)="mostrarHijos($event, menu.menuPadre)">
+          <img
+            class="element-icon me-3"
+            [src]="'assets/images/' + menu.menuPadre.icono + '.svg'"
+            alt="icono">
+          {{ menu.menuPadre.nombre}}
+        </a>
+        <ng-container *ngFor="let hijo of menu.menuPadre.menuHijos">
+          <ul
+            class="submenu"
+            *ngIf="menu.menuPadre.visibleHijos">
+            <li>
+              <a
+                href="javascript:void(0);"
+                routerLinkActive="active-link"
+                [routerLink]='[hijo.url]'>
+                <span>{{hijo.nombre}}</span>
+              </a>
+            </li>
+          </ul>
+        </ng-container>
+      </li>
+      <li *ngIf="!tieneHijos(menu.menuPadre)">
+        <a
+          class="opciones-menu"
+          routerLinkActive="active-link"
+          href="javascript:void(0);"
+          [routerLink]='[menu.menuPadre.url]'>
+          <img
+            class="element-icon me-3"
+            [src]="'assets/images/' + menu.menuPadre.icono + '.svg'"
+            alt="icono">
+          {{ menu.menuPadre.nombre}}
+        </a>
+      </li>
+    </ng-container>
+  </ul>
+</nav>
+<section class="user-profile flex-item mt-4">
+  <div class="user__name">
+    {{userLogin.fullName}}
+  </div>
+  <div class="user__logout">
+    <a
+      class="cursor-pointer"
+      (click)="cerrarSesion()">
+      <img
+        src="assets/images/icon-logout.svg"
+        alt="icon logout">
+    </a>
+  </div>
+</section>

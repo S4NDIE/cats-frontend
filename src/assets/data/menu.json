@@ -1,0 +1,38 @@
+[
+  {
+    "menuPadre": {
+      "id": 1,
+      "nombre": "Razas",
+      "name": "breeds",
+      "icono": "icon-process",
+      "url": "breeds",
+      "visibleHijos": false,
+      "clases": [],
+      "menuHijos": []
+    }
+  },
+  {
+    "menuPadre": {
+      "id": 1,
+      "nombre": "Tabla de Razas",
+      "name": "table-breeds",
+      "icono": "icon-process",
+      "url": "table-breeds",
+      "visibleHijos": false,
+      "clases": [],
+      "menuHijos": []
+    }
+  },
+  {
+    "menuPadre": {
+      "id": 2,
+      "nombre": "Usuarios",
+      "name": "users",
+      "icono": "icon-process",
+      "url": "users",
+      "visibleHijos": false,
+      "clases": [],
+      "menuHijos": []
+    }
+  }
+]

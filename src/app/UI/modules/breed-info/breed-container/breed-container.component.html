@@ -1,0 +1,15 @@
+<div class="container-breed">
+  <div class="container-carousel">
+    <select class="container-select" [(ngModel)]="breedSelected" (change)="getImageBreed()">
+      <option
+        *ngFor="let breed of breedsList"
+        [ngValue]="breed">
+        {{ breed.name }}
+      </option>
+    </select>
+    <image-carousel [imagesBreed]="imagesBreed"></image-carousel>
+  </div>
+  <div class="container-information">
+    <breed-information [breed]="breedSelected"></breed-information>
+  </div>
+</div>

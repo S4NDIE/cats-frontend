@@ -1,0 +1,25 @@
+#logo img {max-width:70px;}
+
+#brand {align-self: flex-start; text-align:center;}
+.user-profile {align-items:center; align-self: flex-end; background:#fff; border-radius:10px; box-shadow:0 8px 16px rgba(0,0,0,0.1); display:flex; justify-content:space-between; padding: 15px;}
+.user-profile .user__name {font-size: 16px; font-weight: var(--font-weight-semibold);}
+.user-profile .user__logout a {align-items: center; border: 1px solid var(--color-lightgray); border-radius: 20px; display: flex; height: 40px; justify-content: center; width: 40px;}
+#main-menu {align-self: center;}
+#main-menu > ul {list-style: none; margin:0; padding:0;}
+#main-menu > ul > li {border-radius: 10px; font-size: 16px; font-weight:var(--font-weight-semibold);}
+#main-menu > ul > li.active {background: var(--color-green);}
+#main-menu > ul > li > a {align-items: center; color:var(--color-darkblue); display:flex; padding:20px; width: 100%;}
+#main-menu > ul > li > a i {margin-right: 1em}
+#main-menu > ul .submenu {list-style: none; margin: 0 20px; padding: 0 0 20px 2.6em;}
+#main-menu > ul .submenu li {font-size: 14px; font-weight: var(--font-weight-regular);}
+#main-menu > ul .submenu li:not(:last-child) {margin-bottom: 0.5em;}
+#main-menu > ul .submenu li a {color: var(--color-darkblue);}
+#main-menu > ul .submenu li.active a {font-weight: var(--font-weight-semibold);}
+#main-menu > ul .submenu li.active a:after {background: var(--color-darkblue); border-radius: 50%; content: " "; display: inline-block; height: 5px; margin-left: 0.5em; vertical-align: middle; width: 5px;}
+
+
+.menu__toggle {background:var(--color-darkblue); border-radius:10px; display:inline-block; height:40px; position:relative; width:40px;}
+.menu__toggle span {background-color:var(--color-white); height:1px; left:10px; position:absolute;}
+.menu__toggle span.hb-one {top:14px; width: 20px;}
+.menu__toggle span.hb-two {top:20px; width: 14px;}
+.menu__toggle span.hb-three {top:26px; width: 18px;}

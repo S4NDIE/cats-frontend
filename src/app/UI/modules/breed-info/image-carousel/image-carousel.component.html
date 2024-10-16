@@ -1,0 +1,15 @@
+<div *ngIf="imagesBreed.length > 0" class="carousel-container">
+  <div>
+    <mat-card>
+      <img class="carousel-image" [src]="imagesBreed[currentIndex].url" alt="Carrusel" />
+    </mat-card>
+  </div>
+
+  <div class="indicators">
+    <span *ngFor="let image of imagesBreed; let i = index" 
+          [class.active]="currentIndex === i" 
+          (click)="goToSlide(i)">
+      ●
+    </span>
+  </div>
+</div>

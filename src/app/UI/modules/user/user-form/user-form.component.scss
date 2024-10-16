@@ -1,0 +1,27 @@
+.customers-container {
+  padding: 5vh;
+}
+
+.user-container {
+  max-height: 400px; 
+  padding: 20px;
+  overflow-y: auto; 
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px;
+}
+
+.close-button {
+  margin-left: auto; 
+}
+.title {
+  color: var(--color-darkblue);
+  font-weight: bold;
+  margin: 0px 0px 0px 0px;
+  font-size: 30px;
+
+} 

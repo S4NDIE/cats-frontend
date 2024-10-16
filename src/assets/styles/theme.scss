@@ -1,0 +1,57 @@
+@use '@angular/material' as mat;
+
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
+
+$primary-color: (
+    100: #ffe0b2,
+    200: #ffcd80,
+    500: #ff9900,
+    700: #f57d00,
+    contrast: (
+        200: #000000,
+        500: #ffffff,
+        700: #ffffff
+    )
+);
+
+$secondary-color: (
+    100: #b7eaf7,
+    200: #8adcf3,
+    500: #2fb8ec,
+    700: #1d96cb,
+    contrast: (
+        200: #000000,
+        500: #ffffff,
+        700: #ffffff
+    )
+);
+
+$warn-color: (
+    100: #ffe0b2,
+    200: #ffcd80,
+    500: #ff9900,
+    700: #f57d00,
+    contrast: (
+        200: #000000,
+        500: #ffffff,
+        700: #ffffff
+    )
+);
+
+$mlass-frontend-primary: mat.define-palette($primary-color);
+$mlass-frontend-accent: mat.define-palette($secondary-color);
+$mlass-frontend-warn: mat.define-palette($warn-color);
+
+$mlass-frontend-theme: mat.define-light-theme((
+    color: (
+        primary: $mlass-frontend-primary,
+        accent: $mlass-frontend-accent,
+        warn: $mlass-frontend-warn,
+    ),
+    typography: mat.define-legacy-typography-config(
+        $font-family: 'Poppins'
+    )
+));
+
+@include mat.all-legacy-component-themes($mlass-frontend-theme);

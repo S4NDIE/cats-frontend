@@ -1,0 +1,31 @@
+<body
+  class="page-main"
+  [ngClass]="{ 'menu-open' : mostrarMenu }">
+<aside
+  class="column-left"
+  aria-label="column left">
+  <app-menu-side
+    class="column-left"
+    (onCerrarMenu)="mostrarMenu = false">
+  </app-menu-side>
+</aside>
+<aside
+  class="column-right"
+  aria-label="column right">
+  <main>
+    <div class="main-content">
+      <header class="page__header mb-2 container-fluid">
+        <button
+          class="menu__toggle"
+          type="button"
+          (click)="mostrarMenu = true">
+          <span class="hb-one"></span>
+          <span class="hb-two"></span>
+          <span class="hb-three"></span>
+        </button>
+      </header>
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</aside>
+</body>

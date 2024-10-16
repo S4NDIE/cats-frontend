@@ -1,0 +1,53 @@
+<div class="container-page">
+  <div class="breed-header">
+    <h2 class="title">Lista de Razas</h2>
+  
+    <div class="filters">
+        <span class="label-filter">Filtro</span>
+        <input [(ngModel)]="filterBreed" (keydown.enter)="getBreedsFilter()" placeholder="">
+    </div>
+  </div>
+  
+  <div class="mt-4 table-responsive">
+    <ngx-datatable 
+        #myTable
+        class="material expandable"
+        [rows]="breedsList"
+        [columns]="columnsBreed"
+        [columnMode]="ColumnMode.force"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        rowHeight="auto"xs
+        [limit]="10"
+        [scrollbarH]="true"
+    >
+      <ngx-datatable-row-detail [rowHeight]="200" #myDetailRow>
+        <ng-template let-row="row" let-expanded="expanded" ngx-datatable-row-detail-template>
+          <div class="container-detail">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>{{ row.temperament }}</mat-card-title>
+                <mat-card-subtitle>{{ row.origin }}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ row.description }}</p>
+                <a [href]="row.wikipedia_url" target="_blank">Más información</a>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          
+        </ng-template>
+      </ngx-datatable-row-detail>
+      
+      <ng-template
+      let-row="row" let-rowIndex="rowIndex" let-expanded="expanded" ngx-datatable-cell-template #rowexpand>
+        <button *ngIf="!expanded" class="down" (click)="toggleExpandRow(row)">
+          <img alt="down" src="assets/images/icon-arrow_down.svg" />
+        </button>
+        <button *ngIf="expanded" class="down up" (click)="collapseAllRow()">
+          <img alt="up" src="assets/images/icon-arrow_up.svg" />
+        </button>
+      </ng-template>
+    </ngx-datatable>
+  </div>
+</div>

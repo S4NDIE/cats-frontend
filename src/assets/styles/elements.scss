@@ -1,0 +1,23 @@
+.element-icon {background-position:center; background-repeat:no-repeat; background-size: auto; display:inline-block; height:26px; vertical-align: middle; width:26px;}
+.element-border {border: 1px solid var(--color-lightgray); border-radius: 10px;}
+.field__wrap {padding: 1em;}
+.btn-small .element-icon {height:16px; width:16px;}
+.status {align-items: center; display: inline-flex;}
+.status:before {content: " "; border-radius: 50%; margin-right: 0.5em;}
+.status.status__big:before {height: 15px; width: 15px;}
+.status.status__mini:before {height: 8px; width: 8px;}
+.status.status__green:before {background-color: var(--color-status_green);}
+.status.status__yellow:before {background-color: var(--color-status_yellow);}
+.status.status__red:before {background-color: var(--color-status_red);}
+.contact-item {border: 1px solid var(--color-green); border-radius: 15px; display: inline-block; line-height: 1em; padding: 0.5em 1rem; position: relative; vertical-align: middle;}
+.contact-item .item__bubble {background: var(--color-green); border: 1px solid var(--color-green); border-radius: 10px; right: 0; line-height: 1em; opacity: 0; padding: 1em; position: absolute; top: 100%; transition: all 0.2s; visibility: hidden; z-index: 10;}
+.contact-item:hover .item__bubble {opacity: 1; top: 120%; visibility: visible;}
+.contact-item .item__bubble:before {content: " "; border-color: transparent transparent var(--color-green) transparent; border-style: solid; border-width: 5px; right: 1em; position: absolute; top: -10px;}
+.contact-item .item__bubble .item__info:not(:last-child) {border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 0.5em; margin-bottom: 0.5em;}
+.drag-panel {background: rgba(255,255,255,0.8); border: 3px dashed var(--color-gray); border-radius: 10px; display: flex; justify-content: center; margin-bottom: 1em; padding: 10vh 2em;}
+.drag-panel .drag__wrap {align-items: center; display: flex;}
+.drag-panel .drag-title {padding: 1em;}
+.drag-panel .drag-separator {align-items: center; color: var(--color-darkblue); display: flex; font-weight: var(--font-weight-semibold); height: 100%; padding: 0 1em; position: relative; text-transform: uppercase;}
+.drag-panel .drag-separator:before, .drag-panel .drag-separator:after {background-color: var(--color-darkblue); content: " "; height: 35%; left: 50%; position: absolute; width: 1px;}
+.drag-panel .drag-separator:before {top: 0;}
+.drag-panel .drag-separator:after {bottom: 0;}

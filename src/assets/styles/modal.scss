@@ -1,0 +1,15 @@
+.modal-editing {background:rgba(0,0,0,0.6); height:100%; left:0; opacity:0; position:fixed; top:0; transition:all 0.2s; visibility:hidden; width:100%; z-index:101;}
+.modal-editing.active {opacity:1; visibility: visible;}
+.modal-editing .modal__window {background:#fff; height: 100%; padding:30px; position:absolute; top:0; transition: right 0.2s;}
+.modal-editing.active .modal__window {right: 0;}
+.modal-editing .modal__window h3 {margin-bottom:1em;}
+.modal-editing .modal__container {height: 100%; padding-bottom: 3.5em; overflow-y: scroll;}
+.modal-editing .modal__actions {background: rgb(255,255,255); background: linear-gradient(0deg, rgba(255,255,255,1) 70%, rgba(255,255,255,0) 100%); bottom: 0; display: flex; justify-content: space-between; left: 0; padding: 30px; position: absolute; width: 100%;}
+
+@media screen and (min-width:769px) {
+  .modal-editing .modal__window {right: -380px; width:380px;}
+}
+
+@media screen and (max-width:768px) {
+  .modal-editing .modal__window {right: -100%; width: 100%;}
+}

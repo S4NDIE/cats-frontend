@@ -1,0 +1,58 @@
+.panel {background:#fff; box-shadow:var(--shadow-box); border-radius:10px; margin-bottom:1em; padding:20px;}
+.panel .panel__header {border-bottom: 1px solid var(--color-lightgray); margin: -20px -20px 0; padding: 1em 10px 0.5em;}
+.panel .panel__content {margin-bottom: 1em;}
+.panel.panel-table .panel__header {margin-bottom:10px;}
+.panel.panel-table .panel__header .panel__title h3 {color:#000; font-size:18px;}
+.panel.panel-table .panel__header .panel__actions .btn {background-image:none; height:45px;}
+.panel.panel-table .panel__header .panel__actions .btn:before {background-size:16px; height:30px; width:30px;}
+
+.panel-table table {font-size: 14px; width:100%;}
+.panel-table table thead th, .panel.panel-table table tbody td {padding-bottom:10px; padding-top:10px;}
+.panel-table table thead th {border-bottom:1px solid #ddd;}
+.panel-table table tbody tr td {border-bottom:1px solid #ddd; padding: 5px 0; }
+.panel-table table tbody tr td:last-child { text-align: right; }
+.panel-table table tfoot td {border:none !important; padding:0 !important;}
+.panel-table table tfoot td div {background:rgba(0,0,0,0.1); font-size:1.2em; font-weight:bold; padding-bottom:8px; padding-top:8px;}
+.panel-table table tfoot td div.total-first {border-radius:5px 0 0 5px; padding-left:5px; padding-right:10%; text-align:right;}
+.panel-table table tfoot td div.total-last {border-radius:0 5px 5px 0; padding-left:5px; padding-right:5px;}
+
+.panel-toggle .toggle_wire-item {border: 1px solid var(--color-lightgray); border-radius: 10px;}
+.panel-toggle .toggle_wire-item:not(:last-child) {margin-bottom: 1em;}
+.panel-toggle .toggle_wire-item .toggle__head {padding: 10px 20px;}
+.panel-toggle .toggle_wire-item.active .toggle__head {border-bottom: 1px solid var(--color-lightgray);}
+.panel-toggle .toggle_wire-item .toggle__head .toggle__title {font-weight: var(--font-weight-semibold);}
+.panel-toggle .toggle_wire-item .toggle__head .toggle__title i {background-image:url(../images/icon-arrow_down.svg);}
+.panel-toggle .toggle_wire-item.active .toggle__head .toggle__title i {background-image:url(../images/icon-arrow_up.svg);}
+.panel-toggle .toggle_wire-item .toggle__content {padding: 10px 20px 20px;}
+.panel-toggle .toggle_wire-item .toggle__content .toggle-info {list-style: none; margin: 0 0 1em; padding: 0;}
+.panel-toggle .toggle_wire-item .toggle__content .toggle-info li {display: inline-block;}
+.panel-toggle .toggle_wire-item .toggle__content .toggle-info li:not(:last-child) {margin-right: 1em;}
+.panel-toggle .panel-table {border: 1px solid var(--color-darkblue); border-radius: 10px;}
+.panel-toggle .panel-table table thead th, .panel-toggle .panel-table table tbody td {border-color: var(--color-darkblue);}
+.panel-toggle .panel-table table thead th:first-child, .panel-toggle .panel-table table tbody td:first-child {padding-left: 1em;}
+.panel-toggle .panel-table table thead th:last-child, .panel-toggle .panel-table table tbody td:last-child {padding-right: 1em;}
+.panel-toggle .panel-table table tbody tr:last-child td {border: none;}
+
+.panel.panel-tabs .tabs-nav {list-style:none; margin:0; padding:0; position:relative; z-index:2;}
+.panel.panel-tabs .tabs-nav li {display:inline-block;}
+.panel.panel-tabs .tabs-nav li a {background:#ccc; border-radius:5px 5px 0 0; display:block; padding:12px 20px;}
+.panel.panel-tabs .tabs-nav li a.active {background:#fff; color:#7736c1; font-weight:bold;}
+.panel.panel-tabs .tabs-container {background:#fff; border-radius:0 0 10px 10px; box-shadow:0 3px 10px rgba(0,0,0,0.15);padding:40px; position:relative; z-index:1;}
+.panel.panel-tabs .tabs-container > div:not(.active) {display:none;}
+.panel.panel-tabs .tabs-container .panel-section {margin-bottom:1.5em;}
+.panel.panel-tabs .tabs-container .panel-section h2 {color:#7736c1; font-size:1.4em; font-weight:bold; margin-bottom:1em;}
+.panel .row { margin-left: 0; margin-right: 0; }
+.panel-uploaded .item:not(:last-child) {margin-bottom: 1em;}
+
+@media screen and (min-width: 769px) {
+  .panel.panel-table .panel__header {display:flex; justify-content:space-between;}
+  .panel.panel-table .panel__header .panel__title h3 {margin:0;}
+}
+
+@media screen and (max-width: 768px) {
+  .panel { margin-left: -10px; margin-right: -10px; }
+  .panel.panel-table .panel__content { overflow-x: scroll; }
+  .panel.panel-table table { min-width: 700px; }
+
+  .panel.panel-table .panel__header .panel__title h3 {margin-bottom:10px;}
+}
