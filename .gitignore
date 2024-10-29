@@ -22,8 +22,6 @@ Thumbs.db
 /*.sublime-project
 /*.sublime-workspace
 
-# Environment files
-/src/environments/environment*.ts
 
 # Misc
 /.angular/cache/
